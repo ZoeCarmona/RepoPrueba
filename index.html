@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página Prueba</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Página Prueba</h1>
+    <p class="subtitle">Una mini landing sencilla con una frase aleatoria.</p>
+
+    <section class="quote-box">
+      <p id="quote" class="quote">Cargando frase...</p>
+      <button id="btn" class="btn">Otra frase</button>
+    </section>
+
+    <footer class="footer">
+      <small>Hecho con HTML + CSS </small>
+    </footer>
+  </main>
+
+  <script>
+    const quotes = [
+      "Hoy es buen día para aprender algo nuevo.",
+      "Si funciona, no lo toques (o súbele un poquito el CSS).",
+      "Un commit al día mantiene el caos lejos.",
+      "Respira: el bug no es personal.",
+      "Más simple casi siempre es mejor."
+    ];
+
+    const quoteEl = document.getElementById("quote");
+    const btn = document.getElementById("btn");
+
+    function randomQuote() {
+      const i = Math.floor(Math.random() * quotes.length);
+      quoteEl.textContent = quotes[i];
+    }
+
+    btn.addEventListener("click", randomQuote);
+    randomQuote();
+  </script>
+</body>
+</html>
